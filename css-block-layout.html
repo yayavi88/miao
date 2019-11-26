@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .a {
+      background-color: black;
+
+    }
+
+    .a p {
+      display: block;
+      color: white;
+      margin: auto;
+      width: 600px;
+    }
+
+    #p {
+      width: 600px;
+      margin: auto;
+    }
+
+    .b {
+      width: 600px;
+      margin: auto;
+    }
+
+    .b p:hover {
+      background-color: red;
+    }
+
+    .b p {
+
+      box-sizing: border-box;
+      width: 180px;
+      height: 40px;
+      border: 3px solid;
+      background-color: pink;
+      margin-right: 30px;
+      margin-bottom: 15px;
+      line-height: 34px;
+      text-align: center;
+    }
+
+    .b p:nth-child(3n+2) {
+      margin-left: 210px;
+      margin-top: -55px
+    }
+
+    .b p:nth-child(3n+3) {
+      margin-left: 420px;
+      margin-top: -55px
+    }
+
+    .d {
+      width: 600px;
+      margin: auto;
+    }
+
+    .d p {
+      margin: 0px;
+    }
+
+    .p2 {
+      border: 1px dotted
+    }
+
+    .e p {
+      background-color: #EF8AEE;
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="a">
+    <p>hello world 请调整浏览器窗口大小查看效果</p>
+  </div>
+  <p id="p">
+    页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+    页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
+  </p>
+
+  </div>
+  <div class="b">
+    <p>宽180高40(包含边框)</p>
+    <p>产品</p>
+    <p>产品</p>
+    <p>水平间隙30px</p>
+    <p>产品</p>
+    <p>产品</p>
+    <p>垂直间隙15px</p>
+    <p>产品</p>
+    <p>产品</p>
+    <p>边框宽度3px</p>
+    <p>产品</p>
+    <p>产品</p>
+  </div>
+  <div class="d">
+    <p class="p1">link</p>
+    <p class="p2"></p>
+    <p class="p1">link</p>
+    <p class="p2"></p>
+    <p class="p1">link</p>
+    <p class="p2"></p>
+    <p class="p1">link</p>
+    <p class="p2"></p>
+    <p class="p1">link</p>
+  </div>
+  <div class="e">
+    <p>©版权所有</p>
+    <p>本页所有布局均使用块元素</p>
+  </div>
+</body>
+
+</html>
