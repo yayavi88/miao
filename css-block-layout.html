@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <meta http-equiv="refresh" content="1"> -->
   <title>Document</title>
   <style>
     .a {
@@ -63,16 +64,55 @@
 
     .d p {
       margin: 0px;
+      border-bottom: 1px dotted;
     }
 
-    .p2 {
-      border: 1px dotted
+    .d p:last-child {
+      border-bottom: none;
     }
+
+    /* .p2 {
+      border: 1px dotted
+    } */
 
     .e p {
       background-color: #EF8AEE;
       margin: 0;
       text-align: center;
+    }
+
+    .parctise {
+
+      text-align: center;
+
+    }
+
+    .practise span {
+      box-sizing: border-box;
+      margin-left: 30px;
+      margin-bottom: 15px;
+      display: inline-block;
+      width: 180px;
+      height: 40px;
+      border: 3px solid;
+      text-align: center;
+      line-height: 34px;
+      background-color: pink;
+
+    }
+
+    .practise span:nth-child(3n+1) {
+      margin-left: 0px;
+    }
+
+
+    .practise span:hover {
+      background-color: red;
+    }
+
+    .wrap {
+      width: 600px;
+      margin: auto;
     }
   </style>
 </head>
@@ -101,8 +141,13 @@
     <p>产品</p>
     <p>产品</p>
   </div>
+  <div class="wrap">
+    <div class="practise">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+    </div>
+  </div>
   <div class="d">
-    <p class="p1">link</p>
+    <!-- <p class="p1">link</p>
     <p class="p2"></p>
     <p class="p1">link</p>
     <p class="p2"></p>
@@ -110,7 +155,17 @@
     <p class="p2"></p>
     <p class="p1">link</p>
     <p class="p2"></p>
-    <p class="p1">link</p>
+    <p class="p1">link</p> -->
+
+    <p>link</p>
+
+    <p>link</p>
+
+    <p>link</p>
+
+    <p>link</p>
+
+    <p>link</p>
   </div>
   <div class="e">
     <p>©版权所有</p>
