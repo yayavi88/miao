@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="xiang.css"> -->
+  <title>Document</title>
+  <style>
+    input {
+      width: 500px;
+      height: 40px;
+      position: absolute;
+      left: 0px;
+      right: 0;
+      margin: auto;
+      margin-top: 150px;
+    }
+
+    .wrap {
+      position: relative;
+      margin-top: -150px;
+    }
+
+    .close {
+      width: 500px;
+      height: 50px;
+      position: relative;
+
+      margin: auto;
+    }
+
+    #a {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      margin-top: 40px;
+      background-image: url("1.png");
+      width: 260px;
+      height: 80px;
+      background-position-x: -30px;
+    }
+
+    #b {
+      background-image: url("1.png");
+      width: 50px;
+      height: 50px;
+      background-position-x: -210px;
+      background-position-y: -110px;
+      position: absolute;
+      margin-top: 150px;
+      margin-left: 500px;
+    }
+
+    #c {
+      background-image: url("1.png");
+      width: 40px;
+      height: 40px;
+      background-position-x: -270px;
+      background-position-y: -450px;
+      background-repeat: no-repeat;
+      position: absolute;
+      margin-left: 500px;
+      margin-top: -50px;
+    }
+
+    .search {
+      width: 500px;
+      height: 40px;
+      margin: auto;
+      margin-top: 100px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search">
+    <input type="text" placeholder="请输入关键字">
+    <div id="b"></div>
+  </div>
+  <div class="close">
+    <div id="c"></div>
+  </div>
+  <div class="wrap">
+    <div id="a"></div>
+
+  </div>
+</body>
+
+</html>
