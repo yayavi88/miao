@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: #3166c2;
+      margin-top: 100px;
+
+    }
+
+    ul {
+      width: 600px;
+      margin: auto;
+      list-style: none;
+      font-size: 0;
+    }
+
+    li {
+      color: white;
+      font-size: 14px;
+      display: inline-block;
+      border-left: 1px solid #4575c8;
+      padding: 5px;
+      position: relative;
+    }
+
+    li:last-child {
+      border-right: 1px solid #4575c8;
+    }
+
+    li[data-tip]::before {
+      display: inline-block;
+      padding: 2px;
+      content: attr(data-tip);
+      font-size: 9px;
+      position: absolute;
+      background-color: #f19336;
+      white-space: nowrap;
+      z-index: 10;
+      bottom: 30px;
+      left: 50px;
+
+    }
+
+    li[data-tip]::after {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      bottom: 24px;
+      left: 50px;
+      border: 3px solid;
+      border-color: #f19336 transparent transparent #f19336;
+
+    }
+
+    li[data-tip]:hover::before {
+      background-color: red;
+
+    }
+
+    li[data-tip]:hover::after {
+      border-color: red transparent transparent red;
+
+    }
+
+    li:hover {
+      background-color: #1e55a6;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li>首页</li>
+      <li data-tip="低价促">海外酒店</li>
+      <li>火车票</li>
+      <li data-tip="新升级">汽车票</li>
+  </div>
+
+
+  </ul>
+</body>
+
+</html>
