@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html {
+      padding: 0;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      font-size: 0;
+      background-color: #acacac;
+      color: black;
+      white-space: nowrap;
+    }
+
+    li {
+      font-size: 12px;
+      display: inline-block;
+      padding: 2px 10px;
+
+    }
+
+    li:hover {
+      color: white;
+      background-color: #1f56b3;
+
+    }
+
+    .one>:first-child {
+      font-weight: bold;
+
+
+    }
+
+    .two>li:hover {
+      background-color: #acacac;
+    }
+
+    .two {
+      display: none;
+      left: 0;
+      padding: 0;
+      font-weight: normal;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      white-space: normal;
+      border-radius: 0 0 4px 4px;
+      top: 18px;
+
+    }
+
+
+
+    .two * {
+
+      padding: 2px 0;
+      display: block;
+    }
+
+    .two>li {
+      border-bottom: 1px solid #878786;
+
+    }
+
+    .two>li:last-child {
+      border-bottom: none;
+
+    }
+
+    .two>li>ul>li {
+      padding: 2px 40px 2px 10px;
+    }
+
+    #preferences>li>ul>li {
+      padding: 2px 40px 2px 10px;
+    }
+
+    .one>li:hover .two {
+      display: block;
+    }
+
+    #preferences:hover ul {
+      display: block;
+    }
+
+    #services::after {
+      content: '';
+      border: 6px solid;
+      border-color: transparent transparent transparent black;
+      vertical-align: middle;
+      position: absolute;
+      right: 0px;
+      display: inline-block;
+
+    }
+
+    #preferences::after {
+      content: '';
+      border: 6px solid;
+      border-color: transparent transparent transparent black;
+      vertical-align: middle;
+      position: absolute;
+      right: 0px;
+      display: inline-block;
+    }
+
+    #preferences {
+
+      position: relative;
+    }
+
+    #preferences>ul {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.30);
+      border-radius: 4px;
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: -4px;
+    }
+
+    #preferences>ul>li:last-child {
+      border-bottom: none;
+    }
+
+    #preferences>ul>li {
+      border-bottom: 1px solid #878786;
+
+    }
+
+    #preferences>ul>li:hover {
+      background-color: #acacac;
+
+    }
+
+    #preferences>ul>li>ul>li {
+      padding: 2px 40px 2px 10px;
+    }
+
+    #extensions {
+      position: relative;
+    }
+
+    #extensions::after {
+      content: '⇧⌘X';
+      position: absolute;
+      right: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="one">
+    <li>Code
+      <ul class="two">
+        <li id="a">
+          <ul>
+            <li>About Visual Studio Code</li>
+            <li>Check for Updates...</li>
+          </ul>
+        </li>
+
+        <li id="b">
+          <ul>
+            <li id="preferences">
+              Preferences
+              <ul>
+                <li>
+                  <ul>
+                    <li>Settings[⌘,]</li>
+                    <li>Online Services Settings</li>
+                    <li id="extensions">Extensions</li>
+                  </ul>
+
+
+                <li>
+                  <ul>
+                    <li>Keyboard Shortcuts[⌘L ⌘S]</li>
+                    <li>Keymaps[⌘K ⌘M]</li>
+                  </ul>
+
+
+                <li>
+                  <ul>
+                    <li>User Snippets</li>
+                  </ul>
+
+
+                <li>
+                  <ul>
+                    <li>Color Theme[⌘K ⌘T]</li>
+                    <li>File Icon Theme</li>
+                  </ul>
+
+
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li id="c">
+          <ul>
+            <li id="services">
+              Services
+            </li>
+          </ul>
+        </li>
+
+        <li id="d">
+          <ul>
+            <li>Hide Visual Studio Code</li>
+            <li>Hide Others</li>
+            <li>Show All</li>
+          </ul>
+        </li>
+
+        <li id="e">
+          <ul>
+            <li>
+              Quit Visual Studio Code
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>File</li>
+    <li>Edit</li>
+    <li>Selection</li>
+    <li>View</li>
+    <li>Go</li>
+    <li>Debug</li>
+    <li>Terminal</li>
+    <li>Window</li>
+    <li>Help</li>
+  </ul>
+
+
+</body>
+
+</html>
