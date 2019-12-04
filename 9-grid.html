@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 第一种 表格 */
+    /* table {
+      border-collapse: collapse;
+    }
+
+    td {
+      font-size: 16px;
+      border: 5px solid blue;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      box-sizing: border-box;
+      text-align: center;
+      color: green;
+
+    }
+
+    td:hover::before {
+      cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      left: -5px;
+      top: -5px;
+      content: '';
+      width: 95px;
+      height: 95px;
+      border: 5px solid red;
+      z-index: 10;
+    } */
+
+
+
+    /* 第二种 相对定位 */
+
+    body {
+      padding: 50px;
+    }
+
+    div {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border: 5px solid blue;
+      margin: -5px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 100px;
+    }
+
+    div:nth-child(n+4) {
+      /* display: inline-block; */
+      left: 105px;
+      top: -315px;
+    }
+
+    div:nth-child(n+7) {
+      /* display: inline-block; */
+      left: 210px;
+      top: -630px;
+    }
+
+    div:hover {
+      border-color: red;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 第一种 表格 -->
+  <!-- <table>
+
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table> -->
+
+
+  <!-- 第二种 相对定位 -->
+
+  <nav class="grid">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+  </nav>
+</body>
+
+</html>
