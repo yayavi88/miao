@@ -362,30 +362,32 @@ ul {
     height: 0;
     position: absolute;
     margin: auto;
-    top: -20px;
-    bottom: 0;
+    top: 20px;
+    /* bottom: 0; */
     left: 0;
     right: 0;
     transition: 0.3s;
 }
 .navigation p:hover span:nth-child(2),
 .navigation li:nth-child(21):hover+p span:nth-child(2) {
-    font-size: 14px;
+    opacity: 1;
     line-height: normal;
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    font-size: 14px;
 
 }
 .navigation p span:nth-child(2) {
     line-height: 0;
-    font-size: 0;
+    font-size: 0px;
     color: #333;
     position: absolute;
     left: 0;
     right: 0;
     margin: auto;
-    bottom: 15px;
+    top:115px;
     text-align: center;
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    opacity: 0;
 
 }
 .navigation p:hover,
