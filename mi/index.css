@@ -310,7 +310,7 @@ ul {
 }
 
 .navigation li:hover {
-    color: #ff6700;
+    color: white;
     cursor: pointer;
 }
 
@@ -351,21 +351,23 @@ ul {
 .navigation li:nth-child(21):hover~p img {
     /* display: block; */
     /* width: 90px; */
-    height: 90px;
+    /* height: 90px; */
     transition: 0.3s;
+    opacity: 1;
 
 }
 
 .navigation p img {
     /* display: none; */
     width: 90px;
-    height: 0;
+    height: 90;
     position: absolute;
     margin: auto;
     top: 20px;
     /* bottom: 0; */
     left: 0;
     right: 0;
+    opacity: 0;
     transition: 0.3s;
 }
 .navigation p:hover span:nth-child(2),
@@ -374,6 +376,8 @@ ul {
     line-height: normal;
     /* transition: 0.3s; */
     font-size: 14px;
+     top:115px;
+    transition: 0.3s;
 
 }
 .navigation p span:nth-child(2) {
@@ -384,9 +388,9 @@ ul {
     left: 0;
     right: 0;
     margin: auto;
-    top:115px;
+    top:0px;
     text-align: center;
-    /* transition: 0.3s; */
+    transition: 0.3s;
     opacity: 0;
 
 }
@@ -402,7 +406,7 @@ ul {
 }
 
 .log-in li:hover {
-    color: #ff6700;
+    color: white;
     cursor: pointer;
 }
 
