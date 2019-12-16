@@ -8,7 +8,8 @@
   <title>Document</title>
 
   <style>
-    html * {
+    /* 第一种 */
+    /* html * {
       /* background-color: rgb(0,0,0,0.1); */
     }
 
@@ -30,6 +31,29 @@
 
     dd::after {
       content: ',';
+    }
+
+    */
+
+    /* 第二种 浮动 */
+    html * {
+      background-color: rgb(0, 0, 0, 0.1);
+    }
+
+    dd {
+      display: inline;
+      float: left;
+      margin: 0;
+    }
+
+    dt {
+      width: 50px;
+      float: left;
+      clear: left;
+    }
+
+    dd::after {
+      content: ','
     }
   </style>
 </head>
