@@ -391,9 +391,11 @@
             (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a)
         ));
     if (b * b < 4 * a * c)
-        alert(
-            'x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5) + 'i;x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5)
-        );
+        alert('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (
+            Math.sqrt(4 * a * c - b * b) / (2 * a)
+        ).toFixed(5) + 'i;x2=' + (-b / (2 * a)).toFixed(5) + '-' + (
+            Math.sqrt(4 * a * c - b * b) / (2 * a)
+        ).toFixed(5));
 </script>
 
 <script type="x" id="ch0104/21">
@@ -410,4 +412,81 @@
     var y = Number(prompt('经过的时间：'));
     var n = n - Math.ceil((y / x));
     alert('还剩下完整的苹果数为:' + n);
+</script>
+
+<!-- 1.5 -->
+
+<script type="x" id="ch0105/01">
+    var n = Number(prompt('学生人数'));
+    var age = [];
+    var sum = 0;
+    for (var i = 0; i < n; i++) {
+        age[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '名学生的年龄'));
+    }
+    for (var j = 0; j < n; j++) {
+        sum = sum + age[j];
+    }
+    alert(sum / n);
+</script>
+
+<script type="x" id="ch0105/02">
+    var balance = [];
+    var sum = 0;
+    for (var i = 0; i < 12; i++) {
+        balance[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '月的月末结余'));
+    }
+    for (var j = 0; j < 12; j++) {
+        sum = sum + balance[j];
+    }
+    alert('$' + (
+        sum / 12
+    ).toFixed(2));
+</script>
+
+<script type="x" id="ch0105/03">
+    var n = Number(prompt('n'));
+    var arr = [];
+    var sum = 0;
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个数的数值'));
+    }
+    for (var j = 0; j < n; j++) {
+        sum = sum + arr[j];
+    }
+    alert((sum / n).toFixed(4));
+</script>
+
+<script type="x" id="ch0105/04">
+    var n = Number(prompt('n'));
+    var arr =[];
+    var sum = 0;
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个数的数值'));
+    }
+    for (var j = 0; j < n; j++) {
+        sum = sum + arr[j];
+    }
+    alert(sum + ' ' + (
+        sum / n
+    ).toFixed(5));
+</script>
+
+<script type="x" id="ch0105/05">
+    var n = Number(prompt('参加考试人数'));
+    var arr = [];
+    var sum = 0;
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个学生的成绩'));
+    }
+    alert(Math.max.apply(Math,arr));
 </script>
