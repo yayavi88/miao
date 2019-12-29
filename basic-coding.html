@@ -1,4 +1,5 @@
 <!-- 1.3 -->
+
 <script type="x" id="ch0103/01">
     var a = Number(prompt('a'));
     var b = Number(prompt('b'));
@@ -174,7 +175,6 @@
     else
         alert('negative');
 </script>
-
 <script type="x" id="ch0104/02">
     var n = Number(prompt('n'));
     alert(Math.abs(n.toFixed(2)));
@@ -342,7 +342,7 @@
         alert('no');
 </script>
 
-<script type="x" id="ch0104/17">
+<script type="x" id="ch0104/17 ">
     var a = Number(prompt('a'));
     if (a % 400 == 0 || a % 4 == 0 && a % 100 != 0)
         alert('Y');
@@ -375,7 +375,7 @@
         alert('Invalid operator!');
 </script>
 
-<script type="x" id="ch0104/20">
+<script type="x" id="ch0104/20 ">
     var x = Number(prompt('x'));
     var a = Number(prompt('a'));
     var b = Number(prompt('b'));
@@ -398,7 +398,7 @@
         ).toFixed(5));
 </script>
 
-<script type="x" id="ch0104/21">
+<script type="x" id="ch0104/21 ">
     var n = Number(prompt('买的苹果数：'));
     var x = Number(prompt('虫子吃掉一个苹果的时间：'));
     var y = Number(prompt('经过的时间：'));
@@ -464,7 +464,7 @@
 
 <script type="x" id="ch0105/04">
     var n = Number(prompt('n'));
-    var arr =[];
+    var arr = [];
     var sum = 0;
     for (var i = 0; i < n; i++) {
         arr[i] = Number(prompt('请输入第' + (
@@ -488,5 +488,354 @@
             i + 1
         ) + '个学生的成绩'));
     }
-    alert(Math.max.apply(Math,arr));
+    alert(Math.max.apply(Math, arr));
+</script>
+
+<script type="x" id="ch0105/06">
+    var n = Number(prompt('n'));
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个数的值'));
+    }
+    var result = Math
+        .max
+        .apply(Math, arr) - Math
+        .min
+        .apply(Math, arr);
+    alert(result);
+</script>
+
+<script type="x" id="ch0105/07">
+    var n = Number(prompt('n'));
+    var arrg = [];
+    var arrs = [];
+    var arrc = [];
+    var sumg = 0;
+    var sums = 0;
+    var sumc = 0;
+    for (var i = 0; i < n; i++) {
+        arrg[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '天的金牌数'));
+        arrs[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '天的银牌数'));
+        arrc[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '天的铜牌数'));
+        sumg = sumg + arrg[i];
+        sums = sums + arrs[i];
+        sumc = sumc + arrc[i];
+    }
+    var sum = sumg + sums + sumc;
+    alert('金牌数：' + sumg + ',银牌数：' + sums + '，铜牌数：' + sumc + '，总奖牌数：' + sum)
+</script>
+
+<script type="x" id="ch0105/08">
+    var n = Number(prompt('请输入多边形的边数'));
+    var arr = [];
+    var result = 0;
+    var sum = 0;
+    for (var i = 0; i < n - 1; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个内角的度数'));
+        sum = sum + arr[i];
+    }
+    result = (n - 2) * 180 - sum;
+    alert('未知内角的度数为：' + result);
+</script>
+
+<script type="x" id="ch0105/09">
+    var m = Number(prompt('m'));
+    var n = Number(prompt('n'));
+    var arr = [];
+    var sum = 0;
+    for (var i = 0; i <= (n - m); i++) {
+        arr[i] = m + i;
+        if (arr[i] % 2 != 0)
+            sum = sum + arr[i];
+        else
+            sum = sum;
+        }
+    alert(m + '到' + n + '之间的所有奇数和为：' + sum);
+</script>
+
+<script type="x" id="ch0105/10">
+    var m = Number(prompt('m'));
+    var n = Number(prompt('n'));
+    var arr = [];
+    var sum = 0;
+    for (var i = 0; i <= (n - m); i++) {
+        arr[i] = m + i;
+        if (arr[i] % 17 == 0)
+            sum = sum + arr[i];
+        else
+            sum = sum;
+        }
+    alert(m + '到' + n + '之间的所有能被17整除的数之和为：' + sum);
+</script>
+
+<script type="x" id="ch0105/11">
+    var k = Number(prompt('k'));
+    var arr = [];
+    var count1 = 0;
+    var count5 = 0;
+    var count10 = 0;
+    for (var i = 0; i < k; i++) {
+        arr[i] = Number(prompt('输入第' + (
+            i + 1
+        ) + '个数的值'))
+        if (arr[i] == 1)
+            count1++;
+        else if (arr[i] == 5)
+            count5++;
+        else if (arr[i] == 10)
+            count10++;
+        }
+    alert('1出现的次数：' + count1 + '，5出现的次数：' + count5 + '，10出现的次数：' + count10);
+</script>
+
+<script type="x" id="ch0105/12">
+    var N = Number(prompt('输入整数列的长度'));
+    var m = Number(prompt('输入指定数字'));
+    var arr = [];
+    var count = 0;
+    for (var i = 0; i < N; i++) {
+        arr[i] = Number(prompt('输入第' + (
+            i + 1
+        ) + '个数的值'));
+        if (arr[i] == m)
+            count++;
+        }
+    alert(N + '个数中与' + m + '相同的数的个数为：' + count);
+</script>
+
+<script type="x" id="ch0105/13">
+    var a = Number(prompt('a'));
+    var n = Number(prompt('n'));
+    var result = 1;
+    for (var i = 0; i < n; i++) {
+        result = result * a;
+    }
+    alert('乘方结果为：' + result);
+</script>
+
+<script type="x" id="ch0105/14">
+    var x = Number(prompt('x'));
+    var n = Number(prompt('n'));
+    var result = x;
+    for (var i = 0; i < n; i++) {
+        result = result * (1 + 0.001);
+    }
+    alert(n + '年以后人口数为：' + result.toFixed(4));
+</script>
+
+<script type="x" id="ch0105/15">
+    var R = Number(prompt('年利率'));
+    var M = Number(prompt('总值'));
+    var Y = Number(prompt('投资年限'));
+    var result = M;
+    for (var i = 0; i < Y; i++) {
+        result = result * (1 + R / 100);
+    }
+    alert(Y + '年以后共有' + Math.floor(result));
+</script>
+
+<script type="x" id="ch0105/16">
+    var N = Number(prompt('年薪'));
+    var K = Number(prompt('房子涨价率'));
+    var price = 200;
+    var M = 1;
+    for (; price > N * M && M <= 20; M++) {
+        price = price * (1 + K / 100);
+    }
+    if (M <= 20)
+        alert(M);
+    else
+        alert('impossible');
+</script>
+
+<script type="x" id="ch0105/17">
+    var K = Number(prompt('k'));
+    var x = 1;
+    var a1 = a2 = 1;
+    if (K == 1 || K == 2)
+        x = 1;
+    else
+        for (var i = 2; i < K; i++) {
+            a1 = a2;
+            a2 = x;
+            x = a1 + a2;
+        }
+    alert(x);
+</script>
+
+<script type="x" id="ch0105/18">
+    var n = Number(prompt('n'));
+    var a0 = Number(prompt('鸡尾酒疗法临床试验总病例数'));
+    var b0 = Number(prompt('鸡尾酒疗法有效病例数'));
+    var a = [];
+    var b = [];
+    var x = b0 / a0;
+    for (var i = 1; i < n; i++) {
+        a[i] = Number(prompt('新疗法临床试验总病例数'));
+        b[i] = Number(prompt('新疗法有效病例数'));
+        if (b[i] / a[i] - x > 0.05)
+            alert('better');
+        else if (x - b[i] / a[i] > 0.05)
+            alert('worse');
+        else
+            alert('same');
+        }
+</script>
+
+<script type="x" id="ch0105/19">
+    var n = Number(prompt('屋顶数'));
+    var x = [];
+    var y = [];
+    var r = [];
+    var l = [];
+    var t = 0;
+    for (var i = 0; i < n; i++) {
+        x[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个屋顶的x坐标'));
+        y[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个屋顶的y坐标'));
+        r[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个屋顶的人数'));
+        l[i] = Math.sqrt(x[i] * x[i] + y[i] * y[i]);
+        t = t + (2 * l[i] / 50 + 1.5 * r[i]);
+    }
+    alert('救援需要的总时间为：' + Math.ceil(t));
+</script>
+
+<script type="x" id="ch0105/20">
+    var h = Number(prompt('h'));
+    var s = -h;
+    for (var i = 0; i < 10; i++) {
+        s = s + 2 * h;
+        h = h / 2;
+    }
+    alert('第10次落地共经过米数：' + s + ',第10次弹跳高度：' + h);
+</script>
+
+<script type="x" id="ch0105/21">
+    var n = Number(prompt('n'));
+    var str = [];
+    if (n == 1)
+        n = n;
+    else {
+        for (var i = 0; n != 1; i++) {
+            if (n % 2 == 0) {
+                n = n / 2;
+                console.log(n * 2 + '/2=' + n);
+            } else {
+                n = 3 * n + 1;
+                console.log((n - 1) / 3 + '*3+1=' + n);
+            }
+        }
+    }
+    console.log('End');
+</script>
+
+<script type="x" id="ch0105/22">
+    var arr = [];
+    var remaining = 0;
+    var sum = 0;
+    for (var i = 0; i < 12; i++) {
+        arr[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个月的预算'));
+        remaining = remaining + 300 - arr[i];
+        if (remaining < 0) {
+            alert(-(i + 1));
+            break;
+        } else if (remaining >= 0 && remaining < 100) {
+            remaining = remaining;
+            sum = sum;
+        } else if (remaining >= 100 && remaining < 200) {
+            remaining = remaining - 100;
+            sum = sum + 100;
+        } else if (remaining >= 200 && remaining < 300) {
+            remaining = remaining - 200;
+            sum = sum + 200;
+        } else if (remaining >= 300) {
+            remaining = remaining - 300;
+            sum = sum + 300;
+        }
+    }
+    alert(sum * 1.2 + remaining);
+</script>
+
+<script type="x" id="ch0105/23">
+    var m = Number(prompt('每天开始时的药品总量'));
+    var n = Number(prompt('取药人数'));
+    var count = 0;
+    var arr = [];
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个病人希望取走药品数量'));
+        m = m - arr[i];
+        if (m < 0) {
+            m = m + arr[i];
+            count++;
+        }
+    }
+    alert('这天没有取上药品人数：' + count);
+</script>
+
+<script type="x" id="ch0105/24">
+    var n = Number(prompt('血压测量次数'));
+    var shrink = [];
+    var diastolic = [];
+    var count = 0;
+    var maxc = [];
+    for (var i = 0; i < n; i++) {
+        shrink[i] = Number(prompt('第' + (
+            i + 1
+        ) + '次测量收缩压'));
+        diastolic[i] = Number(prompt('第' + (
+            i + 1
+        ) + '次测量舒张压'));
+        if ((shrink[i] <= 140 && shrink[i] >= 90) && (diastolic[i] <= 90 && diastolic[i] >= 60)) {
+            count++;
+        } else {
+            count = 0;
+        }
+        maxc[i] = count;
+    }
+    alert('血压连续正常的最长小时数为：' + Math.max.apply(Math, maxc));
+</script>
+
+<script type="" id="ch0105/25">
+    var arr7 = [];
+    var a7;
+    var arr9 = [];
+    var a9;
+    var i;
+    var j = 0;
+    var f = 0;
+    if (j >= 2 && f >= 2 && j == f && arr7[0] == arr9[2] && arr7[1] == arr9[1] && arr7[2] == arr9[0]) {
+        alert(j);
+    } else {
+        for (var j = 0; a7 != 0; j++) {
+            var a = i;
+            arr7[j] = a % 7;
+            a7 = Math.ceil(a / 7);
+            a = a7;
+        }
+        for (var f = 0; a9 != 0; f++) {
+            var b = i;
+            arr9[j] = b % 9;
+            a9 = Math.ceil(b / 9);
+            b = a9;
+        }
+    }
 </script>
