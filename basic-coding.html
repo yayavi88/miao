@@ -28,21 +28,21 @@
     var b = Number(prompt('b'));
     var result = Math.floor(a / b);
     var remainder = a % b;
-    console.log(result,remainder);
+    console.log(result, remainder);
 </script>
 
 <script type="x" id="ch0103/05">
     var a = Number(prompt("a"));
     var b = Number(prompt("b"));
     var result = a / b;
-    console.log('a / b保留9为小数结果：' + result.toFixed(9));
+    console.log(result.toFixed(9));
 </script>
 
 <script type="x" id="ch0103/06">
     var a = Number(prompt('请输入确诊数:'));
     var b = Number(prompt('请输入死亡数:'));
     var result = b / a * 100;
-    console.log('甲流死亡率:' + result.toFixed(3) + '%');
+    console.log(result.toFixed(3) + '%');
 </script>
 
 <script type="x" id="ch0103/07">
@@ -52,13 +52,13 @@
     var c = Number(prompt('c'));
     var d = Number(prompt('d'));
     var result = a * x * x * x + b * x * x + c * x + d;
-    console.log('计算结果:' + result.toFixed(7));
+    console.log(result.toFixed(7));
 </script>
 
 <script type="x" id="ch0103/08">
     var f = Number(prompt('请输入华氏温度：'));
     var c = 5 * (f - 32) / 9;
-    console.log('对应的摄氏温度为:' + c.toFixed(5));
+    console.log(c.toFixed(5));
 </script>
 
 <script type="x" id="ch0103/09">
@@ -342,7 +342,7 @@
         alert('no');
 </script>
 
-<script type="x" id="ch0104/17 ">
+<script type="x" id="ch0104/17">
     var a = Number(prompt('a'));
     if (a % 400 == 0 || a % 4 == 0 && a % 100 != 0)
         alert('Y');
@@ -375,7 +375,7 @@
         alert('Invalid operator!');
 </script>
 
-<script type="x" id="ch0104/20 ">
+<script type="x" id="ch0104/20">
     var x = Number(prompt('x'));
     var a = Number(prompt('a'));
     var b = Number(prompt('b'));
@@ -814,28 +814,79 @@
     alert('血压连续正常的最长小时数为：' + Math.max.apply(Math, maxc));
 </script>
 
-<script type="" id="ch0105/25">
-    var arr7 = [];
-    var a7;
-    var arr9 = [];
-    var a9;
-    var i;
-    var j = 0;
-    var f = 0;
-    if (j >= 2 && f >= 2 && j == f && arr7[0] == arr9[2] && arr7[1] == arr9[1] && arr7[2] == arr9[0]) {
-        alert(j);
-    } else {
-        for (var j = 0; a7 != 0; j++) {
-            var a = i;
-            arr7[j] = a % 7;
-            a7 = Math.ceil(a / 7);
-            a = a7;
-        }
-        for (var f = 0; a9 != 0; f++) {
-            var b = i;
-            arr9[j] = b % 9;
-            a9 = Math.ceil(b / 9);
-            b = a9;
+<script type="x" id="ch0105/25">
+    var a;
+    var b;
+    var c;
+    var arr = [];
+    var n = 0;
+    var ar = [];
+    var br = [];
+    var cr = [];
+    for (a = 1; a < 7 && n == 0; a++) {
+        for (b = 0; b < 7 && n == 0; b++) {
+            for (c = 1; c < 7 && n == 0; c++) {
+                if (a + 7 * b + 49 * c == a * 81 + b * 9 + c) {
+                    n = 1;
+                    break;
+                }
+            }
         }
     }
+    alert((a + 7 * b + 49 * c) + ',' + c + b + a + ',' + a + b + c);
+</script>
+
+<script type="x" id="ch0105/26">
+    var n = Number(prompt('四位数个数'));
+    var arr = [];
+    var a = [];
+    var b = [];
+    var c = [];
+    var d = [];
+    var count = 0;
+    for (var i = 0; i < n; i++) {
+        arr[i] = Number(prompt('请输入第' + (
+            i + 1
+        ) + '个四位数'));
+        a[i] = Math.floor((arr[i] / 1000));
+        b[i] = Math.floor(((arr[i] - a[i] * 1000) / 100));
+        c[i] = Math.floor(((arr[i] - a[i] * 1000 - b[i] * 100) / 10));
+        d[i] = Math.floor(arr[i] - a[i] * 1000 - b[i] * 100 - c[i] * 10);
+        if (d[i] - a[i] - b[i] - c[i] > 0) {
+            count++;
+        }
+    }
+    alert(count);
+</script>
+
+<script type="x" id="ch0105/27">
+    var sn = 1;
+    var n;
+    var k = Number(prompt('k'));
+    for (n = 1; sn <= k; n++) {
+        sn = sn + 1 / n;
+    }
+    alert(n);
+</script>
+
+<script type="x" id="ch0105/28">
+    var n = prompt('n');
+    // var str=n.split('');
+    var l = n.length;
+    var str1='';
+    for (var i = l - 1; i >= 0; i--) {
+        str1= str1+n.charAt(i);
+    }
+    alert(str1);
+</script>
+
+<script type="" id="ch0105/29">
+    var n = prompt('n');
+    // var str=n.split('');
+    var l = n.length;
+    var str1='';
+    for (var i = l - 1; i >= 0; i--) {
+        str1= str1+n.charAt(i);
+    }
+    alert(str1);
 </script>
