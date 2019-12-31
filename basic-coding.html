@@ -587,7 +587,7 @@
         else if (arr[i] == 10)
             count10++;
         }
-    console.log(count1 , count5 , count10);
+    console.log(count1, count5, count10);
 </script>
 
 <script type="x" id="ch0105/12">
@@ -714,7 +714,7 @@
         s = s + 2 * h;
         h = h / 2;
     }
-    console.log(s , h);
+    console.log(s, h);
 </script>
 
 <script type="x" id="ch0105/21">
@@ -762,7 +762,7 @@
             sum = sum + 300;
         }
     }
-    console.log(sum * 1.2 , remaining);
+    console.log(sum * 1.2, remaining);
 </script>
 
 <script type="x" id="ch0105/23">
@@ -1232,7 +1232,7 @@
     for (var i = 0; i < 10; i++) {
         s[i] = Number(prompt('第' + (
             i + 1
-        ) + '种数的数量'));
+        ) + '种书的数量'));
     }
     for (var i = 0; i < 10; i++) {
         x[i] = s[i] * p[i];
@@ -1243,17 +1243,375 @@
 
 <script type="x" id="ch0106/04">
     var s = [];
-    var x = [];
-
-    var sum = 0;
-    for (var i = 0; i < 10; i++) {
+    var f = [];
+    var n = Number(prompt('n'));
+    for (var i = 0; i < n; i++) {
         s[i] = Number(prompt('第' + (
             i + 1
-        ) + '种数的数量'));
+        ) + '个数'));
     }
-    for (var i = 0; i < 10; i++) {
-        x[i] = s[i] * p[i];
-        sum = sum + x[i]
+    for (var i = 0; i < n; i++) {
+        f[i] = s[n - i - 1]
     }
-    alert(sum.toFixed(1));
+    alert(f);
+</script>
+
+<script type="x" id="ch0106/05">
+    var n = Number(prompt('过往病人数目'));
+    var a = [];
+    var a1 = 0;
+    var a2 = 0;
+    var a3 = 0;
+    var a4 = 0;
+    for (var i = 0; i < n; i++) {
+        a[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个病人的年龄'));
+        if (a[i] >= 0 && a[i] <= 18) {
+            a1++;
+        } else if (a[i] > 18 && a[i] <= 35) {
+            a2++;
+        } else if (a[i] > 35 && a[i] <= 60) {
+            a3++;
+        } else {
+            a4++
+        }
+    }
+    document.write((a1 / n * 100).toFixed(2) + '%<br>' + (
+        a2 / n * 100
+    ).toFixed(2) + '%<br>' + (
+        a3 / n * 100
+    ).toFixed(2) + '%<br>' + (
+        a4 / n * 100
+    ).toFixed(2) + '%');
+</script>
+
+<script type="x" id="ch0106/06">
+    var L = Number(prompt('L'));
+    var M = Number(prompt('M'));
+    var a = [];
+    var m1 = [];
+    var m2 = [];
+    var s;
+    var count = 0;
+    for (var i = 0; i <= L; i++) {
+        a[i] = 1;
+    }
+    for (var i = 0; i < M; i++) {
+        m1[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个区域的起点'));
+        m2[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个区域的终点'));
+    }
+
+    for (var i = 0; i < M; i++) {
+        for (var j = m1[i]; j <= m2[i]; j++) {
+            a[j] = 0;
+        }
+    }
+    for (var i = 0; i < L; i++) {
+        if (a[i] == 0) {
+            count++;
+        }
+    }
+    alert(501 - count);
+</script>
+
+<script type="x" id="ch0106/07">
+    var n = Number(prompt('n'));
+    var a = [];
+    var b = [];
+    var c = [];
+    var k = a[0];
+    var count = 0;
+    for (var i = 0; i < n; i++) {
+        a[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个数'));
+    }
+    for (var i = 1; i < n; i++) {
+        b[i] = Math.abs(a[i] - a[i - 1]);
+        k = a[i];
+    }
+    for (var i = 1; i < n; i++) {
+        b[i] = Math.abs(a[i] - a[i - 1]);
+        k = a[i];
+    }
+    b.sort(function (a, b) {
+        return b - a;
+    });
+    for (var i = 1; i < n; i++) {
+        c[i] = Math.abs(b[i] - b[i - 1]);
+        if (c[i] == 1) {
+            count++;
+        }
+    }
+    if (count == (n - 2)) {
+        alert('Jolly');
+    } else {
+        alert('Not jolly');
+    }
+</script>
+
+<script type="x" id="ch0106/08">
+    var N = Number(prompt('N'));
+    var NA = Number(prompt('小A出拳的周期长度'));
+    var NB = Number(prompt('小B出拳的周期长度'));
+    var a = [];
+    var b = [];
+    var na = [];
+    var nb = [];
+    var la = 0;
+    var lb = 0;
+    var counta = 0;
+    var countb = 0;
+    for (var i = 0; i < NA; i++) {
+        a[i] = Number(prompt('小A出拳规律的第' + (
+            i + 1
+        ) + '步出'));
+    }
+    for (var i = 0; i < NB; i++) {
+        b[i] = Number(prompt('小B出拳规律的第' + (
+            i + 1
+        ) + '步出'));
+    }
+    for (var i = 1; i <= Math.ceil(N / NA); i++) {
+        for (var j = 0; j < NA; j++) {
+            na[j + la] = a[j];
+        }
+        la = i * NA;
+    }
+    for (var i = 1; i <= Math.ceil(N / NB); i++) {
+        for (var j = 0; j < NB; j++) {
+            nb[j + lb] = b[j];
+        }
+        lb = i * NB;
+    }
+    for (var i = 0; i < N; i++) {
+        if (na[i] == 0 && nb[i] == 2) {
+            counta++;
+        } else if (na[i] == 0 && nb[i] == 5) {
+            countb++;
+        }
+        if (na[i] == 2 && nb[i] == 5) {
+            counta++;
+        } else if (na[i] == 2 && nb[i] == 0) {
+            countb++;
+        }
+        if (na[i] == 5 && nb[i] == 0) {
+            counta++;
+        } else if (na[i] == 5 && nb[i] == 2) {
+            countb++;
+        }
+    }
+    if (counta > countb) {
+        alert('A');
+    } else if (counta < countb) {
+        alert('B');
+    } else {
+        alert('draw');
+    }
+</script>
+
+<script type="x" id="ch0106/09">
+    var n = Number(prompt('n'));
+    var a = [];
+    var b = [];
+    var sum = 0;;
+
+    for (var i = 0; i < n; i++) {
+        a[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个a的向量值'));
+    }
+    for (var i = 0; i < n; i++) {
+        b[i] = Number(prompt('第' + (
+            i + 1
+        ) + '个b的向量值'));
+    }
+    for (var i = 0; i < n; i++) {
+        sum = sum + a[i] * b[i];
+    }
+    alert(sum);
+</script>
+
+<script type="x" id="ch0106/10">
+    var stra = prompt('a').split('');
+    var strb = prompt('b').split('');
+    var a = [];
+    var b = [];
+    var sum = [];
+    var str = '';
+    for (var i = 0; i < Math.min(stra.length, strb.length); i++) {
+        a[i] = Number(stra[i]);
+        b[i] = Number(strb[i]);
+        sum[i] = a[i] + b[i];
+    }
+    for (var i = 0; i < Math.min(stra.length, strb.length); i++) {
+        str = str + sum[i];
+    }
+    alert(str);
+</script>
+
+<script type="x" id="ch0106/11">
+    var a = Number(prompt('a'));
+    var b = Number(prompt('b'));
+    var result;
+    result = a - b;
+    alert(result);
+</script>
+
+<script type="x" id="ch0106/12">
+    var n = Number(prompt('n'));
+    var result;
+    result = 1 << n;
+    alert(result);
+</script>
+
+<script type="x" id="ch0106/13">
+    var c = Number(prompt('c'));
+    var arr = [];
+    var count = 0;
+    for (var k = 2; k <= 9; k++) {
+        if (c % k == 0) {
+            arr[count] = k;
+            count++;
+        }
+    }
+    arr = arr.sort(function (a, b) {
+        return a - b
+    });
+    if (arr.length == 0) {
+        alert('none');
+    } else {
+        alert(arr);
+    }
+</script>
+
+<script type="x" id="ch0106/14">
+    var n = Number(prompt('n'));
+    var result = 1;
+    var str = '';
+    for (var i = 1; i <= n; i++) {
+        result = result * i;
+    }
+    alert(result.toLocaleString());
+</script>
+
+<script type="x" id="ch0106/15">
+    var N = Number(prompt('N'));
+    var n = 1;
+    var S = 0;
+    for (var j = 1; j <= N; j++) {
+        for (var i = 1; i <= j; i++) {
+            n = n * i;
+        }
+        S = S + n;
+        n = 1;
+    }
+    alert(S);
+</script>
+
+<script type="x" id="ch0107/01">
+    var str = prompt('输入字符串');
+    var str1 = str.replace(/[^0-9]/ig, '');
+    alert(str1.length);
+</script>
+
+<script type="x" id="ch0107/02">
+    var str = prompt('输入字符串');
+    var str1 = str.split('');
+    var s;
+    var count1 = 0;
+    var i;
+    var j;
+    for (i = 0; i < str1.length; i++) {
+
+        s = str1[i];
+        for (j = 0; j < str1.length; j++) {
+            if (s == str1[j] && j != i) {
+                break;
+            }
+            count1++;
+        }
+        if (count1 == str1.length && j != i) {
+            break;
+        }
+        count1 = 0;
+    }
+    if (count1 == str1.length) {
+        alert(s);
+    } else if (i = str1.length - 1) {
+        alert('no');
+    }
+</script>
+
+<script type="x" id="ch0107/03">
+    var n = Number(prompt('阈值'));
+    var a = prompt('第一条DNA序列');
+    var b = prompt('第二条DNA序列');
+    var na = [];
+    var nb = [];
+    var count = 0;
+    na = a.split('');
+    nb = b.split('');
+
+    for (var i = 0; i < a.length; i++) {
+        if (na[i] == nb[i]) {
+            count++;
+        }
+    }
+    if (count / a.length >= n) {
+        alert('yes');
+    } else {
+        alert('no');
+    }
+</script>
+
+<script type="x" id="ch0107/04">
+    var N = Number(prompt('进行游戏局数'));
+    var result = [];
+    for (var i = 0; i < N; i++) {
+        S1 = prompt('第' + (
+            i + 1
+        ) + '局 Player1选择');
+        S2 = prompt('第' + (
+            i + 1
+        ) + '局 Player2选择');
+        if (S1 == 'Rock' && S2 == 'Scissors') {
+            result[i] = 'Player1';
+        } else if (S1 == 'Rock' && S2 == 'Paper') {
+            result[i] = 'Player2';
+        } else if (S1 == 'Paper' && S2 == 'Rock') {
+            result[i] = 'Player1';
+        } else if (S1 == 'Paper' && S2 == 'Scissors') {
+            result[i] = 'Player2';
+        } else if (S1 == 'Scissors' && S2 == 'Paper') {
+            result[i] = 'Player1';
+        } else if (S1 == 'Scissors' && S2 == 'Rock') {
+            result[i] = 'Player2';
+        } else {
+            result[i] = 'Tie';
+        }
+    }
+    document.write(result.join('<br>'));
+</script>
+
+<script type="" id="ch0107/05">
+    var str = prompt('输入字符串');
+    var strascii = [];
+    var strascii1 = [];
+    var strchar = [];
+    for (var i = 0; i < str.length; i++) {
+        strascii[i] = str.charCodeAt(i);
+    }
+    for (var i = 0; i < str.length; i++) {
+        strascii1[i] = strascii[i] + strascii[i + 1];
+        strchar[i] = String.fromCharCode(i);
+    }
+    strascii1[str.length - 1] = strascii[0] + strascii[str.length - 1];
+    strchar[str.length - 1]= String.fromCharCode(str.length - 1);
+    alert(strchar);
 </script>
