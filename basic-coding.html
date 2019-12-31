@@ -66,7 +66,7 @@
     var d = 2 * r;
     var l = 2 * r * Math.PI;
     var s = r * r * Math.PI;
-    console.log( d.toFixed(4), l.toFixed(4),s.toFixed(4));
+    console.log(d.toFixed(4), l.toFixed(4), s.toFixed(4));
 </script>
 
 <script type="x" id="ch0103/10">
@@ -86,7 +86,7 @@
 <script type="x" id="ch0103/12">
     var r = Number(prompt('r'));
     var v = 4 / 3 * 3.14 * r * r * r;
-    console.log( v.toFixed(2));
+    console.log(v.toFixed(2));
 </script>
 
 <script type="x" id="ch0103/13">
@@ -94,7 +94,7 @@
     var a = Math.floor(n / 100);
     var b = Math.floor((n - a * 100) / 10);
     var c = n - a * 100 - b * 10;
-    console.log(c + b + a);
+    console.log(c.toString() + b.toString() + a.toString());
 </script>
 
 <script type="x" id="ch0103/14">
@@ -381,7 +381,7 @@
     var b = Number(prompt('b'));
     var c = Number(prompt('c'));
     if (b * b == 4 * a * c)
-        alert('x1=x2' + (
+        alert('x1=x2=' + (
             (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
         ));
     else if (b * b > 4 * a * c)
@@ -395,7 +395,7 @@
             Math.sqrt(4 * a * c - b * b) / (2 * a)
         ).toFixed(5) + 'i;x2=' + (-b / (2 * a)).toFixed(5) + '-' + (
             Math.sqrt(4 * a * c - b * b) / (2 * a)
-        ).toFixed(5));
+        ).toFixed(5) + 'i');
 </script>
 
 <script type="x" id="ch0104/21 ">
@@ -403,15 +403,7 @@
     var x = Number(prompt('虫子吃掉一个苹果的时间：'));
     var y = Number(prompt('经过的时间：'));
     var n = n - Math.ceil((y / x));
-    alert('还剩下完整的苹果数为:' + n);
-</script>
-
-<script type="x" id="ch0104/21">
-    var n = Number(prompt('买的苹果数：'));
-    var x = Number(prompt('虫子吃掉一个苹果的时间：'));
-    var y = Number(prompt('经过的时间：'));
-    var n = n - Math.ceil((y / x));
-    alert('还剩下完整的苹果数为:' + n);
+    alert(n);
 </script>
 
 <!-- 1.5 -->
@@ -530,7 +522,7 @@
         sumc = sumc + arrc[i];
     }
     var sum = sumg + sums + sumc;
-    alert('金牌数：' + sumg + ',银牌数：' + sums + '，铜牌数：' + sumc + '，总奖牌数：' + sum)
+    alert(sumg + sums + sumc + sum);
 </script>
 
 <script type="x" id="ch0105/08">
@@ -545,7 +537,7 @@
         sum = sum + arr[i];
     }
     result = (n - 2) * 180 - sum;
-    alert('未知内角的度数为：' + result);
+    alert(result);
 </script>
 
 <script type="x" id="ch0105/09">
@@ -560,7 +552,7 @@
         else
             sum = sum;
         }
-    alert(m + '到' + n + '之间的所有奇数和为：' + sum);
+    alert(sum);
 </script>
 
 <script type="x" id="ch0105/10">
@@ -575,7 +567,7 @@
         else
             sum = sum;
         }
-    alert(m + '到' + n + '之间的所有能被17整除的数之和为：' + sum);
+    alert(sum);
 </script>
 
 <script type="x" id="ch0105/11">
@@ -595,7 +587,7 @@
         else if (arr[i] == 10)
             count10++;
         }
-    alert('1出现的次数：' + count1 + '，5出现的次数：' + count5 + '，10出现的次数：' + count10);
+    alert(count1 + count5 + count10);
 </script>
 
 <script type="x" id="ch0105/12">
@@ -610,7 +602,7 @@
         if (arr[i] == m)
             count++;
         }
-    alert(N + '个数中与' + m + '相同的数的个数为：' + count);
+    alert(count);
 </script>
 
 <script type="x" id="ch0105/13">
@@ -620,7 +612,7 @@
     for (var i = 0; i < n; i++) {
         result = result * a;
     }
-    alert('乘方结果为：' + result);
+    alert(result);
 </script>
 
 <script type="x" id="ch0105/14">
@@ -630,7 +622,7 @@
     for (var i = 0; i < n; i++) {
         result = result * (1 + 0.001);
     }
-    alert(n + '年以后人口数为：' + result.toFixed(4));
+    alert(result.toFixed(4));
 </script>
 
 <script type="x" id="ch0105/15">
@@ -641,7 +633,7 @@
     for (var i = 0; i < Y; i++) {
         result = result * (1 + R / 100);
     }
-    alert(Y + '年以后共有' + Math.floor(result));
+    alert(Math.floor(result));
 </script>
 
 <script type="x" id="ch0105/16">
@@ -712,7 +704,7 @@
         l[i] = Math.sqrt(x[i] * x[i] + y[i] * y[i]);
         t = t + (2 * l[i] / 50 + 1.5 * r[i]);
     }
-    alert('救援需要的总时间为：' + Math.ceil(t));
+    alert(Math.ceil(t));
 </script>
 
 <script type="x" id="ch0105/20">
@@ -722,7 +714,7 @@
         s = s + 2 * h;
         h = h / 2;
     }
-    alert('第10次落地共经过米数：' + s + ',第10次弹跳高度：' + h);
+    alert(s + h);
 </script>
 
 <script type="x" id="ch0105/21">
@@ -788,7 +780,7 @@
             count++;
         }
     }
-    alert('这天没有取上药品人数：' + count);
+    alert(count);
 </script>
 
 <script type="x" id="ch0105/24">
@@ -811,7 +803,7 @@
         }
         maxc[i] = count;
     }
-    alert('血压连续正常的最长小时数为：' + Math.max.apply(Math, maxc));
+    alert(Math.max.apply(Math, maxc));
 </script>
 
 <script type="x" id="ch0105/25">
@@ -833,7 +825,7 @@
             }
         }
     }
-    alert((a + 7 * b + 49 * c) + ',' + c + b + a + ',' + a + b + c);
+    alert((a + 7 * b + 49 * c) + (c + b + a) + (a + b + c));
 </script>
 
 <script type="x" id="ch0105/26">
@@ -1179,9 +1171,9 @@
     var n = Number(prompt('n'));
     var sum = 0;
     var d = 1;
-    for (var i = 0; d <n; i++) {
+    for (var i = 0; d < n; i++) {
         d = d + i;
-        sum=sum+i*i;
+        sum = sum + i * i;
     }
     alert(sum);
 </script>
