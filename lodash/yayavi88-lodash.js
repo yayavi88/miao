@@ -1,4 +1,4 @@
-var foobar = {
+var yayavi88 = {
   chunk: function () { }
 
 
