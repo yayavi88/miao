@@ -11,6 +11,11 @@ var yayavi88 = {
   negate,
   spread,
   fromPairs,
+  every,
+  some,
+  difference,
+
+
 
 }
 
@@ -38,35 +43,35 @@ function compact(array) {
   return result;
 }
 
-// function concat(array, value) {
-//   var result = [];
-//   result.push(...array);
-//   for (var i = 0; i < ary.length; i++) {
-//     if (Array.isArray(...value)) {
-//       result.push(...ary[i]);
-//     } else {
-//       result.push(ary[i]);
-//     }
-//   }
-//   return result;
-// }
+function concat(array, ...value) {
+  var result = [];
+  result.push(...array);
+  for (var i = 0; i < value.length; i++) {
+    if (Array.isArray(value[i])) {
+      result.push(...value[i]);
+    } else {
+      result.push(value[i]);
+    }
+  }
+  return result;
+}
 
 
-// function flattenDeep(array) {
-//   var result = [];
-//   array.forEach(function (item) {
-//     if (Array.isArray(array)) {
-//       flattenDeep(item);
-//     } else {
-//       result.push(item);
-//     }
-//   });
-//   return result;
-// }
+function flattenDeep(array) {
+  var result = [];
+  array.forEach(function (item) {
+    if (Array.isArray(array)) {
+      flattenDeep(item);
+    } else {
+      result.push(item);
+    }
+  });
+  return result;
+}
 
-// function bind(f) {
-//   var
-// }
+function bind(f) {
+  var
+}
 
 //前n次调用原函数
 function before(n, func) {
@@ -155,3 +160,27 @@ function fromPairs(pairs) {
   return result;
 }
 
+function difference(array, values) {
+  var values1 = {};
+  for (var i = 0; i < values.length; i++) {
+    values1[values[i]] = 1;
+  }
+  for (var j = 0; j < array.length; j++) {
+    if (array[j] in values1) {
+      array.splice(j, 1);
+    }
+  }
+  return array;
+}
+function differenceBy(...args, values, ) {
+  var values1 = {};
+  for (var i = 0; i < values.length; i++) {
+    values1[values[i]] = 1;
+  }
+  for (var j = 0; j < array.length; j++) {
+    if (array[j] in values1) {
+      array.splice(j, 1);
+    }
+  }
+  return array;
+}
