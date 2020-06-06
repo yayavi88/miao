@@ -1,15 +1,5 @@
 var yayavi88 = {
-  chunk: function (array, size) {
-    result = [];
-    arr = [];
-    if (array.length > size) {
-      arr = array.splice(0, size);
-      result.push(arr);
-    }
-    arr = array.slice(0);
-    result.push(arr);
-    return result;
-  },
+  chunk,
   compact,
   concat,
   flattenDeep,
@@ -48,35 +38,35 @@ function compact(array) {
   return result;
 }
 
-function concat(array, value) {
-  var result = [];
-  result.push(...array);
-  for (var i = 0; i < ary.length; i++) {
-    if (Array.isArray(...value)) {
-      result.push(...ary[i]);
-    } else {
-      result.push(ary[i]);
-    }
-  }
-  return result;
-}
+// function concat(array, value) {
+//   var result = [];
+//   result.push(...array);
+//   for (var i = 0; i < ary.length; i++) {
+//     if (Array.isArray(...value)) {
+//       result.push(...ary[i]);
+//     } else {
+//       result.push(ary[i]);
+//     }
+//   }
+//   return result;
+// }
 
 
-function flattenDeep(array) {
-  var result = [];
-  array.forEach(function (item) {
-    if (Array.isArray(array)) {
-      flattenDeep(item);
-    } else {
-      result.push(item);
-    }
-  });
-  return result;
-}
+// function flattenDeep(array) {
+//   var result = [];
+//   array.forEach(function (item) {
+//     if (Array.isArray(array)) {
+//       flattenDeep(item);
+//     } else {
+//       result.push(item);
+//     }
+//   });
+//   return result;
+// }
 
-function bind(f) {
-  var
-}
+// function bind(f) {
+//   var
+// }
 
 //前n次调用原函数
 function before(n, func) {
@@ -139,22 +129,24 @@ function spread(func) {
   }
 }
 
-function bind(f, ...fixedArgs) {
-  return function (...args) {
-    var copy = fixedaArgs.slice();
-    var j = 0;
-    for (var i = 0; i < copy.length; i++) {
-      if (copy[i] == null) {
-        copy[i] = args[j];
-        j++;
-      }
-      while (j < args.length) {
-        copy.push(args[j++]);
-      }
-    }
-    return f(...copy);
-  }
-}
+// function bind(f, ...fixedArgs) {
+//   return function (...args) {
+//     var copy = fixedaArgs.slice();
+//     var j = 0;
+//     for (var i = 0; i < copy.length; i++) {
+//       if (copy[i] == null) {
+//         copy[i] = args[j];
+//         j++;
+//       }
+//       while (j < args.length) {
+//         copy.push(args[j++]);
+//       }
+//     }
+//     return f(...copy);
+//   }
+// }
+
+
 function fromPairs(pairs) {
   var result = {};
   for (var i = 0; i < pairs.length; i++) {
@@ -162,3 +154,4 @@ function fromPairs(pairs) {
   }
   return result;
 }
+
