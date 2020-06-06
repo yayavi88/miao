@@ -8,6 +8,9 @@ var yayavi88 = {
   ary,
   unary,
   flip,
+  negate,
+  spread,
+  fromPairs,
 
 
 
