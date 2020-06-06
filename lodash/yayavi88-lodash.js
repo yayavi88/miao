@@ -12,10 +12,6 @@ var yayavi88 = {
   spread,
   fromPairs,
 
-
-
-
-
 }
 
 
@@ -30,6 +26,8 @@ function chunk(array, size) {
   result.push(arr);
   return result;
 }
+
+
 function compact(array) {
   var result = [];
   array.forEach(function (item) {
