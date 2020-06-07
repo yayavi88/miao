@@ -17,6 +17,20 @@ var yayavi88 = {
   isEqual,
   differenceWith,
   dropRight,
+  fill,
+  findIndex,
+  findLastIndex,
+  head,
+  flatten,
+  forEach,
+  fromPairs,
+  indexOf,
+  initial,
+  intersection,
+
+
+
+
 
 
 
@@ -60,15 +74,49 @@ function concat(array, ...value) {
   return result;
 }
 
-function flattenDeep(array) {
-  var result = [];
-  array.forEach(function (item) {
-    if (Array.isArray(array)) {
-      flattenDeep(item);
+
+// function flattenDeep(array) {
+//   var result = [];
+//   return reduce(array, function (result, item) {
+//     if (Array.isArray(item)) {
+//      var flattenitem=flattenDeep(item);
+//      result.push(...flattenitem);
+//     } else {
+//       result.push(item);
+//     }
+//     return result;
+//   }, null)
+// }
+
+
+function reduce(collection, iteratee, accumulator) {
+  if (Array.isArray(collection)) {
+    var result
+    if (accumulator == undefined) {
+      result = collection[0];
     } else {
-      result.push(item);
+      result = collection[0] + accumulator;
     }
-  });
+    for (var i = 1; i < collection.length; i++) {
+      result = iteratee(result, collection[i]);
+    }
+    return result;
+  } else {
+    var result = {};
+    if (accumulator == undefined) {
+    }
+    for (var key in collection) {
+      result = iteratee(result, collection[key], key);
+    }
+  } return result;
+}
+
+//键值对数组转化成对象
+function fromPairs(pairs) {
+  var result = {};
+  for (var i = 0; i < pairs.length; i++) {
+    result[pairs[i][0]] = pairs[i][1];
+  }
   return result;
 }
 
@@ -185,6 +233,21 @@ function differenceWith(array, values, func) {
   }
   return array;
 }
+
+function differenceBy(array, values, iteratee) {
+  if (typeof (iteratee) == "function") {
+    array.forEach(iteratee(item));
+    values.forEach(iteratee())
+  } else {
+    for (var j = 0; j < array.length; j++) {
+      if (func(array[j], ...values)) {
+        array.splice(j, 1);
+      }
+    }
+  }
+  return array;
+}
+
 //判断相同
 function isEqual(value, other) {
   if (typeof (value) !== typeof (other)) {
@@ -221,7 +284,6 @@ function drop(array, n) {
   return array.slice(array.length - n);
 }
 
-
 function dropRight(array, n) {
   if (n == undefined) {
     n = 1;
@@ -232,6 +294,86 @@ function dropRight(array, n) {
   return array.slice(0, array.length - n);
 }
 
-function dropRightWhile(array, [predicate = _.identity]) {
+function fill(array, value, start = 0, end = array.length) {
+  for (var i = start; i < end; i++) {
+    array[i] = value;
+  }
+  return array;
+}
+
+function findIndex(array, predicate, fromIndex = 0) {
+  for (var i = fromIndex; i < array.length; i++) {
+    if (predicate(array[i])) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+//从数组尾部开始查找
+function findLastIndex(array, predicate, fromIndex = array.length - 1) {
+  for (var i = fromIndex; i >= 0; i--) {
+    if (predicate(array[i])) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+//取出数组第一个元素
+function head(array) {
+  return array.shift();
+}
+//展开一层数组
+function flatten(array) {
+  var result = [];
+  for (var i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      for (var j = 0; j < array[j]; j++) {
+        result.push(array[i][j]);
+      }
+    }
+    result.push(array[i]);
+  }
+  return result;
+}
+
+//遍历数组或对象
+function forEach(collection, func) {
+  if (Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+      func(collection[i]);
+    }
+  } else {
+    for (var key in collection) {
+      func(collection[key], key);
+    }
+  }
+}
+
+//查找目标元素下标
+function indexOf(array, value, fromIndex = 0) {
+  if (fromIndex >= 0) {
+    for (var i = fromIndex; i < array.length; i++) {
+      if (array[i] == value) {
+        return i;
+      }
+    }
+  } else {
+    for (var i = array.length + fromIndex; i >= 0; i--) {
+      if (array[i] == value) {
+        return i;
+      }
+    }
+  }
+  return -1
+}
+
+//除去数组最后一个元素
+function initial(array) {
+  return array.slice(0, array.length - 1);
+}
+//获取各数组的相同元素
+function intersection(...arrays) {
 
 }
