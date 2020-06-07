@@ -14,6 +14,11 @@ var yayavi88 = {
   every,
   some,
   difference,
+  isEqual,
+  differenceWith,
+  dropRight,
+
+
 
 
 
@@ -31,7 +36,6 @@ function chunk(array, size) {
   result.push(arr);
   return result;
 }
-
 
 function compact(array) {
   var result = [];
@@ -55,7 +59,6 @@ function concat(array, ...value) {
   }
   return result;
 }
-
 
 function flattenDeep(array) {
   var result = [];
@@ -172,15 +175,63 @@ function difference(array, values) {
   }
   return array;
 }
-function differenceBy(...args, values, ) {
-  var values1 = {};
-  for (var i = 0; i < values.length; i++) {
-    values1[values[i]] = 1;
-  }
+
+//排除相同
+function differenceWith(array, values, func) {
   for (var j = 0; j < array.length; j++) {
-    if (array[j] in values1) {
+    if (func(array[j], ...values)) {
       array.splice(j, 1);
     }
   }
   return array;
+}
+//判断相同
+function isEqual(value, other) {
+  if (typeof (value) !== typeof (other)) {
+    return false;
+  } else if (typeof (value) != "object" && typeof (other) != "object") {
+    if (value === other) {
+      return true;
+    }
+  } else {
+    if (Array.isArray(value) && Array.isArray(other)) {
+      if (value.toString() === other.toString()) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      var keys1 = Object.keys(value);
+      var keys2 = Object.keys(other);
+      if (keys1.toString() !== keys2.toString()) {
+        return false;
+      } else {
+        for (var i = 0; i < keys1.length; i++) {
+          if (value[keys1[i]] != other[keys2[i]]) {
+            return false;
+          }
+        }
+        return true;
+      }
+    }
+  }
+  return false;
+}
+function drop(array, n) {
+  return array.slice(array.length - n);
+}
+
+
+function dropRight(array, n) {
+  if (n == undefined) {
+    n = 1;
+  }
+  else if (n >= 3) {
+    return [];
+  }
+  return array.slice(0, array.length - n);
+}
+
+function dropRightWhile(array, [predicate = _.identity]) {
+
 }
